@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}반반{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}">
+    <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    {% block additional_head %}{% endblock %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <script type="text/javascript">
+                alert("{{messages[0]}}");
+            </script>
+        {% endif %}
+    {% endwith %}
+    <style>
+        @font-face {
+            font-family: 'NEXON Lv2 Gothic';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'NEXON Lv2 Gothic Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'NEXON Lv2 Gothic Light';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Light.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        a{
+            font-family: 'NEXON Lv2 Gothic Light';
+            color: whitesmoke;
+        }
+        .nav-link {
+            background-color: rgb(8, 32, 64);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <!-- <a class="navbar-brand" style="margin-left:50px;margin-right:100px;" href="{% if menu.home %}#{% else %}/{% endif %}">
+            <img src= 'static/img/logo.JPG' alt="Logo" style="height:45px;">
+        </a> -->
+
+        <!-- Links -->
+        <ul class="nav nav-pills mr-auto">
+            <li class="nav-item mr-5">
+                <a class="nav-link {% if menu.home %}active{% endif %}" 
+                   href="{% if menu.home %}#{% else %}/{% endif %}">
+                    <i class="fa fa-home"></i> Home
+                </a>
+            </li>
+        </ul>
+        <nav class="navbar navbar-center">
+            <span class="navbar-text">
+                <strong>{% block heading %}악플 분석{% endblock %}</strong>
+            </span>
+        </nav>
+    </nav>
+    
+    <div class="container show-grid">
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <ul class="nav flex-column nav-pills">
+                    <div class="dropdown-divider"></div>
+                    <li class="nav-item">
+                        <a class="nav-link {% if menu.menu1 %}active{% endif %}" 
+                           href="{% if menu.menu1 %}/menu1{% else %}/menu1{% endif %}">메뉴1</a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    <li class="nav-item">
+                        <a class="nav-link {% if menu.menu2 %}active{% endif %}" 
+                           href="{% if menu.menu2 %}/menu2{% else %}/menu2{% endif %}">메뉴2</a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    <li class="nav-item">
+                        <a class="nav-link {% if menu.menu3 %}active{% endif %}" 
+                           href="{% if menu.menu3 %}/menu3{% else %}/menu3{% endif %}">메뉴3</a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    <li class="nav-item">
+                        <a class="nav-link {% if menu.menu4 %}active{% endif %}" 
+                           href="{% if menu.menu4 %}/menu4{% else %}/menu4{% endif %}">메뉴4</a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    <li class="nav-item">
+                        <a class="nav-link {% if menu.menu5 %}active{% endif %}" 
+                           href="{% if menu.menu5 %}/menu5{% else %}/menu5{% endif %}">메뉴5</a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                </ul>
+            </div>
+            <div class="col-9">
+                <h3>{% block subtitle %}{% endblock %}</h3>
+                <hr>
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>  
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center fixed-bottom">
+        <a href = "https://github.com/oodeng98/Multi_5" class="navbar-text">
+            Copyright &copy; 2022 B반 중간 프로젝트 5조 반반조(고은혜, 원동찬, 윤민영, 정태완). All rights reserved.
+        </a>
+    </nav>
+    {% block additional_body %}
+    {% endblock %}
+</body>
+</html>

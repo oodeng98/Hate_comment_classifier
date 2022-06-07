@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block additional_head %}
+<style>
+    /* Make the image fully responsive */
+    .carousel-inner img {
+        width: 100%;
+        height: 360px;
+        overflow: hidden;
+    }
+</style>
+{% endblock %}
+{% block weather %} {{ weather|safe() }} {% endblock %}
+{% block subtitle %}
+<strong style="font-family: NEXON Lv2 Gothic;">2조 데이터 차이</strong>
+<small style="font-family: NEXON Lv2 Gothic Light;">기후 변화 예측 및 작물 추천 시스템</small>
+{% endblock %}
+{% block content %}
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+        <li data-target="#demo" data-slide-to="3"></li>
+        <li data-target="#demo" data-slide-to="4"></li>
+    </ul>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="{% if menu.menu1 %}/menu1{% else %}/menu1{% endif %}">
+                <img src="https://mblogthumb-phinf.pstatic.net/MjAxODEyMDRfNzAg/MDAxNTQzOTMwMDU4MDI1.Nrg3F0XdrCYnS2vNBXUX5oyF5Dds7JPoYVT4BQIHWkgg.bVbUbzVLqfXFXgqTKs6pNcH8gpYtU2CrEMxgIExnDaQg.JPEG.dkgoggog21/ce9d6ee43b9fa3b8bc5828cf7d36e040cf8f1a66796e2a28b2552e67cf3d02ee55ca57531f25eb3dc9aba3d0e6f4b3ddff62e515120538e0a56ec7daaea1ee95d4ac5673b613.jpg?type=w2"
+                    style="max-width: 100%; max-height:360px; margin: auto">
+                <div class="carousel-caption">
+                    <h3>한반도 미래 기후 변화 예측</h3>
+                    <p>Flask, Scikit-Learn, Prophet</p>
+                </div>
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="{% if menu.menu2 %}/menu2{% else %}/menu2{% endif %}">
+                <img src="https://images.christiantoday.co.kr/data/images/full/323354/image.jpg?w=654"
+                    style="max-width: 100%; max-height:360px; margin: auto">
+                <div class="carousel-caption">
+                    <h3>한반도 미래 기후 예측 시각화</h3>
+                    <p>지도 시각화, 크롤링</p>
+                </div>
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="{% if menu.menu3 %}/menu3{% else %}/menu3{% endif %}">
+                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMDA0MjZfMjIw/MDAxNTg3ODYxNjEyMzU0.NJIvHVL6Op1ESvkq6S3JhNacQJCd5tGr7KwdAduLAdYg._WXYPk8ufQYfYOp6Aipq4FVQcEJaVCcQB3rdlbRoXu4g.JPEG.sec1021/ultron.jpg?type=w800"
+                    style="max-width: 100%; max-height:360px; margin: auto">
+                <div class="carousel-caption">
+                    <h3>기후 변화에 따른 미래 추천 작물</h3>
+                    <p>Folium을 이용한 시각화, 추천 시스템</p>
+                </div>
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="{% if menu.menu4 %}/menu4{% else %}/menu4{% endif %}">
+                <img src="https://mblogthumb-phinf.pstatic.net/20150219_224/dldhfl9009_14243559455700EFce_JPEG/%25EB%25A9%2594%25EA%25B0%2580%25ED%258A%25B8%25EB%25A1%25A0-1.jpg?type=w800"
+                    style="max-width: 100%; max-height:360px; margin: auto">
+                <div class="carousel-caption">
+                    <h3>한국어, 영어 감성분석 기반 수요 예측</h3>
+                    <p>인스타그램 Selenium 크롤링</p>
+                </div>
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="{% if menu.menu5 %}/menu5{% else %}/menu5{% endif %}">
+                <img src="https://i.pinimg.com/564x/74/3d/52/743d528d4bf8f11b7a00bc3e79232d61.jpg"
+                    style="max-width: 100%; max-height:360px; margin: auto">
+                <div class="carousel-caption">
+                    <h3>작물별 인스타그램 태그 워드클라우드</h3>
+                    <p>word cloud</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+{% endblock %}

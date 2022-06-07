@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block additional_head %}
+<style>
+    /* Make the image fully responsive */
+    .carousel-inner img {
+        width: 100%;
+        height: 360px;
+        overflow: hidden;
+    }
+</style>
+{% endblock %}
+{% block weather %} {{ weather|safe() }} {% endblock %}
+{% block subtitle %}
+<strong style="font-family: NEXON Lv2 Gothic;"> 반반조 </strong>
+<small style="font-family: NEXON Lv2 Gothic Light;">악플 유형 판별 서비스</small>
+{% endblock %}
+{% block content %}
+
+    
+
+{% endblock %}

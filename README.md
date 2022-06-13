@@ -1,4 +1,4 @@
-### 중간 프로젝트
+### 악플 분류기
 
 (실전 빅데이터 분석 프로젝트, 2022-05-30 ~ 2022-06-16)
 
@@ -44,3 +44,23 @@
 - 윤민영 – 데이터 라벨링 및 모델 개발, 최종 발표  
 - 정태완 – 데이터 라벨링 및 모델 개발, Github 관리  
 
+#### 프로젝트 진행 과정
+- 1, 데이터셋 수집
+	- smilegate ai 센터에서 공개한 한국어 혐오표현 UnSmile 데이터셋
+	- Kaggle Korean News Comments 데이터셋
+
+- 2, 데이터 전처리
+	- null값 제거, 한국어를 제외한 문자 치환(이모티콘, 영어 등 제외)
+	- 데이터 불균형 분포 처리(Undersampling)
+	- 데이터셋 3가지로 확장
+		1, hanspell을 활용한 맞춤법 검사 및 변환 데이터
+		2, pykospacing을 활용한 띄어쓰기 검사 및 변환 데이터
+		3, 맞춤법과 띄어쓰기 검사 및 변환을 거치지 않은 데이터
+	- 데이터셋 라벨링
+		UnSmile dataset의 라벨을 기준으로 하여 Kaggle Korean News Comments 데이터셋을 라벨링
+
+- 3, 학습 내용을 바탕으로 모델 생성(CNN, LSTM, RNN 등)
+- 4, 모델 추가 생성(BiLSTM, Attention, Transformer 등)
+- 5, KoBert 모델과 비교분석
+
+ 

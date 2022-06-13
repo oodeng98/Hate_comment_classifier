@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block subtitle %}
+<strong style="font-family: NEXON Lv2 Gothic Bold;">악플 차단 예시</strong>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <!-- <div class="col-1"></div> -->
+    <div class="col-10">
+        <form action="/menu2" method="post" style="font-family: NEXON Lv2 Gothic Light;">
+            <form>
+                댓글 입력: <input type="text" name="sentence" placeholder="악플은 안됩니다!">
+                
+                  
+                <button type="submit" class="btn btn-primary mr-2"
+                    style="background-color: rgb(8,32,64); font-family: NEXON Lv2 Gothic Bold;">실행</button>
+
+            </form>
+        </form>
+    </div>
+    <!-- <div class="col-1"></div> -->
+</div>
+{% endblock %}

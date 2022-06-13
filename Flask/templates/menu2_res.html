@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block subtitle %}
-<strong style="font-family: NEXON Lv2 Gothic Bold;">악플 유형 판별</strong> - 결과
+<strong style="font-family: NEXON Lv2 Gothic Bold;">악플 확률 측정</strong> - 결과
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -8,7 +8,12 @@
     <div class="col-12">
         <table class="table" style="font-family: NEXON Lv2 Gothic Light;">
             <tr>
-
+                <tr>
+                    <h3>{{ result }}</h3>
+                </tr>
+                <tr>
+                    <img src="static/img/comment_graph.png">
+                </tr>
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center;">

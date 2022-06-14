@@ -24,12 +24,13 @@
     - Okt, Mecab 형태소 분석기
     - Colab Pro
     - Github
-    - hanspell(Python 한국어 맞춤법 검사기)
+    - hanspell(Python 한국어 맞춤법 검사기), pykospacing
     
 - 사용 모델
   
     - Conv1D 
     - LSTM
+    - BiLSTM
     - Transformer etc...
     
 - 비교 모델
@@ -40,7 +41,7 @@
 
 #### 역할
 - 고은혜 – 데이터 라벨링 및 모델 개발, 기획안 발표  
-- 원동찬 – 데이터 라벨링 및 모델 개발, Flask   
+- 원동찬 – 데이터 라벨링 및 모델 개발, Flask 개발
 - 윤민영 – 데이터 라벨링 및 모델 개발, 최종 발표  
 - 정태완 – 데이터 라벨링 및 모델 개발, Github 관리  
 
@@ -61,14 +62,16 @@
 		맞춤법과 띄어쓰기 검사 및 변환을 거치지 않은 데이터
 		
 	- 데이터셋 라벨링
-		UnSmile dataset label 기준
+		UnSmile dataset label + 분쟁유발 label
 		Kaggle Korean News Comments dataset 라벨링
 		Korean HateSpeech Dataset 라벨링
 	
-- 3, 학습 내용을 바탕으로 모델 생성(CNN, LSTM, RNN 등)
+- 3, 학습 내용을 바탕으로 모델 생성(GRU, LSTM, RNN 등)
 
 - 4, 모델 추가 생성(BiLSTM, Attention, Transformer 등)
 
-- 5, KoBert 모델과 비교분석
+- 5, 학습 모델 정확도 비교 및 최종 모델 선정(BiLSTM+LSTM 모델)
+
+- 6, KoBert 모델과 비교분석
 
  

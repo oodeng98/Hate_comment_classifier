@@ -6,20 +6,23 @@
 <div class="row">
     <!-- <div class="col-1"></div> -->
     <div class="col-10">
-        <form action="/menu1" method="post"style="font-family: NEXON Lv2 Gothic Light;">
+        <form action="/menu1" method="post" style="font-family: NEXON Lv2 Gothic Light;">
             <td>학습모델: </td>
             <select name="m_name">
-                <option value="BiLSTM">BiLSTM</option>
-                <option value="GRU">GRU</option>
                 <option value="LSTM">LSTM</option>
-                <option value="Conv1D_BiLSTM">Conv1D + BiLSTM</option>
-                <option value="Conv1D_GRU">Conv1D + GRU</option>
                 <option value="Conv1D_LSTM">Conv1D + LSTM</option>
+                <option value="BiLSTM">BiLSTM</option>
+                <option value="BiLSTM_LSTM">BiLSTM + LSTM</option>
+                <option value="Conv1D_BiLSTM">Conv1D + BiLSTM</option>
+                <option value="CNN_BiLSTM_LSTM">CNN + BiLSTM + LSTM</option>
+                <option value="GRU">GRU</option>
+                <option value="Conv1D_GRU">Conv1D + GRU</option>
             </select>
             <form>
                 입력: <input type="text" name="sentence" placeholder="판별할 문장을 입력하세요">
-                <button type="submit" class="btn btn-primary mr-2" style="background-color: rgb(8,32,64); font-family: NEXON Lv2 Gothic Bold;">실행</button>
-            </form>           
+                <button type="submit" class="btn btn-primary mr-2"
+                    style="background-color: rgb(8,32,64); font-family: NEXON Lv2 Gothic Bold;">실행</button>
+            </form>
         </form>
     </div>
     <!-- <div class="col-1"></div> -->

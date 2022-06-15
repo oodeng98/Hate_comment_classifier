@@ -10,12 +10,14 @@
             <form>
                 <td>학습모델: </td>
                 <select name="m_name">
-                    <option value="BiLSTM">BiLSTM</option>
-                    <option value="GRU">GRU</option>
                     <option value="LSTM">LSTM</option>
-                    <option value="Conv1D_BiLSTM">Conv1D + BiLSTM</option>
-                    <option value="Conv1D_GRU">Conv1D + GRU</option>
+                    <option value="BiLSTM">BiLSTM</option>
+                    <option value="BiLSTM_LSTM">BiLSTM + LSTM</option>
+                    <option value="CNN_BiLSTM_LSTM">CNN + BiLSTM + LSTM</option>
                     <option value="Conv1D_LSTM">Conv1D + LSTM</option>
+                    <option value="Conv1D_BiLSTM">Conv1D + BiLSTM</option>
+                    <option value="GRU">GRU</option>
+                    <option value="Conv1D_GRU">Conv1D + GRU</option>
                 </select>
                 댓글 입력: <input type="text" name="sentence">
                 <button type="submit" class="btn btn-primary mr-2"

@@ -22,9 +22,9 @@ def draw_graph(score, class_text):
         lst.append(element*100)
 
     x = np.arange(len(lst))
-    plt.figure(figsize=(16, 8))
+    plt.figure(figsize=(12, 6))
     plt.bar(x, lst)
-    plt.xticks(x, class_text)
+    plt.xticks(x, class_text, rotation=30)
     plt.rc('font', size = 15)
     plt.xlabel('유형')
     plt.ylabel('확률')

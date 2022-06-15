@@ -23,9 +23,15 @@ def menu1():
     else:
         sentence = request.form['sentence']
         m_name = request.form['m_name']
-        class_text = ['여성/가족', '남성', '성소수자', '인종/국적', '연령', '지역', '종교', '기타 혐오', '악플/욕설', 'clean', '분쟁유발']
+        class_text = ['여성 혐오', '남성 혐오', '성소수자 차별', '인종/국적 차별', '세대갈등', '지역 갈등', '종교 갈등', '기타 혐오', '욕설', 'clean', '분쟁유발']
         score = sentiment_predict(sentence, m_name)
-        result = f"'{sentence}'\n {score[0][score.argmax()]*100}%의 확률로 {class_text[score.argmax()]}에 대한 악플입니다."
+        dic = dict()
+        for i in range(len(score[0])):
+            if score[0][i] >= 0.1:
+                dic[i] = score[0][i]
+        sorted_dict = sorted(dic.items(), key = lambda item: item[1], reverse=True)
+
+        result = f"'{sentence}'의 유형은 {[class_text[d[0]] for d in sorted_dict]}입니다."
         return render_template('menu1_res.html', menu=menu, sentence=sentence, result=result, m_name=m_name)
 
  
@@ -37,7 +43,7 @@ def menu2():
     else:
         sentence = request.form['sentence']
         m_name = request.form['m_name']
-        class_text = ['여성/가족', '남성', '성소수자', '인종/국적', '연령', '지역', '종교', '기타 혐오', '악플/욕설', 'clean', '분쟁유발']
+        class_text = ['여성 혐오', '남성 혐오', '성소수자 차별', '인종/국적 차별', '세대갈등', '지역 갈등', '종교 갈등', '기타 혐오', '욕설', 'clean', '분쟁유발']
 
         score = sentiment_predict(sentence, m_name)
         draw_graph(score[0],class_text)

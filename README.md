@@ -24,26 +24,21 @@
     - Okt, Mecab 형태소 분석기
     - Colab Pro
     - Github
-    - hanspell(Python 한국어 맞춤법 검사기), pykospacing
+    - hanspell(Python 한국어 맞춤법 검사기), pykospacing etc...
+    - Flask
     
 - 사용 모델
   
-    - Conv1D 
+    - GRU 
     - LSTM
     - BiLSTM
     - Transformer etc...
-    
-- 비교 모델
-
-    - KoBERT
-
-
 
 #### 역할
-- 고은혜 – 데이터 라벨링 및 모델 개발, 기획안 발표  
+- 고은혜 – 데이터 라벨링 및 모델 개발, 기획안 발표 
 - 원동찬 – 데이터 라벨링 및 모델 개발, Flask 개발
-- 윤민영 – 데이터 라벨링 및 모델 개발, 최종 발표  
-- 정태완 – 데이터 라벨링 및 모델 개발, Github 관리  
+- 윤민영 – 데이터 라벨링 및 모델 개발, 최종 발표 
+- 정태완 – 데이터 라벨링 및 모델 개발, Github 관리 
 
 #### 프로젝트 진행 과정
 - 1, 데이터셋 수집
@@ -51,27 +46,32 @@
 	- Kaggle Korean News Comments dataset
 	- Korean HateSpeech Dataset
 	
-- 2, 데이터 전처리
+- 2, 데이터셋 라벨링
+    - UnSmile dataset label + 분쟁유발 label
+	
+- 3, 데이터 전처리
 	- null값 제거, 한국어를 제외한 문자 치환(이모티콘, 영어 등 제외)
 	
 	- 데이터 불균형 분포 처리(Undersampling)
 	
 	- 데이터셋 3가지로 확장
-		hanspell을 활용한 맞춤법 검사 및 변환 데이터
-		pykospacing을 활용한 띄어쓰기 검사 및 변환 데이터
-		맞춤법과 띄어쓰기 검사 및 변환을 거치지 않은 데이터
-		
-	- 데이터셋 라벨링
-		UnSmile dataset label + 분쟁유발 label
-		Kaggle Korean News Comments dataset 라벨링
-		Korean HateSpeech Dataset 라벨링
+        - hanspell을 활용한 맞춤법 검사 및 변환 데이터
+            - pykospacing을 활용한 띄어쓰기 검사 및 변환 데이터
+            - 맞춤법과 띄어쓰기 검사 및 변환을 거치지 않은 데이터
+
+	- Mecab 활용, 형태소 분석
+	- Tokenzier 활용, 데이터 토큰화
+	- Sequence padding
 	
 - 3, 학습 내용을 바탕으로 모델 생성(GRU, LSTM, RNN 등)
 
 - 4, 모델 추가 생성(BiLSTM, Attention, Transformer 등)
 
 - 5, 학습 모델 정확도 비교 및 최종 모델 선정(BiLSTM+LSTM 모델)
+	-  1위 BiLSTM+LSTM: 0.71
+	-  2위 Conv1D+LSTM: 0.67
+	-  3위 BiLSTM: 0.64
+	-  4위 Conv1D+BiLSTM: 0.53
 
-- 6, KoBert 모델과 비교분석
-
- 
+- 6, Flask를 활용한 서비스 구현
+	- 악플 유형 분류, 악플 선제 차단
